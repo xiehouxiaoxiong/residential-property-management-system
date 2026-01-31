@@ -1,0 +1,42 @@
+<view class="carInfo">
+  <view class="nav_top">
+    <image src="/images/return.png" style="width: 50rpx;height: 50rpx;position: absolutes;top: 75rpx;" bindtap="back"></image>
+    <view class="content">爱车档案</view>
+
+  </view>
+  <view class="main_area">
+    <view bindtap="clickAddCarDetail" style="height: 200rpx;width: 680rpx;border-radius: 20rpx;box-shadow: 0px 2px 2px 2px rgb(120, 212, 240);position: relative;margin-bottom: 50rpx;">
+      <image src="/images/add.png" style="height: 90rpx;width: 90rpx;position: absolute;top: 50rpx;left: 100rpx;"></image>
+      <view style="font-weight: 600;padding-top:70rpx;font-size: 35rpx;margin-top: 50rpx;margin-left: 220rpx;">添加我的爱车</view>
+
+    </view>
+    <scroll-view scroll-y="true" style="height: 800rpx;width: 95%;border:1rpx solid rgb(231, 227, 227);border-radius: 20rpx;padding: 18rpx;box-shadow: 4rpx 4rpx 8rpx gray;">
+      <view class="show" wx:for="{{info}}">
+        <view class="show_info">
+          <view class="show_left">
+            <view class="img">
+              <image src="{{item.carPicture}}"></image>
+            </view>
+          </view>
+          <view class="show_right">
+            <view class="car_top">
+              <view class="car_name">{{item.carBrand}}({{item.carType}}——{{item.carColor}})</view>
+              <view data-id="{{item.id}}" bindtap="removeCar" class="edit">删除</view>
+            </view>
+            <view class="car_num">{{item.licenseNumber}}</view>
+          </view>
+        </view>
+        <view class="show_IDCard" bind:tap="showIDCard">
+          行驶证 <text class="iconfont icon-arrow-right"></text>
+        </view>
+        <van-popup show="{{show}}" bind:close="onClose" custom-style="height: 40%;width:80%" closeable>
+          <view style="width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;">
+            <image src="{{item.drivingLicense}}" style="width: 350rpx;height: 350rpx;object-fit: cover;"></image>
+          </view>
+        </van-popup>
+
+      </view>
+    </scroll-view>
+
+  </view>
+</view>

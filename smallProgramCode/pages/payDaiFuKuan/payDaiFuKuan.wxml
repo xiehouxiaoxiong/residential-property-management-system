@@ -1,0 +1,36 @@
+<navigation-bar title="订单界面" back="{{false}}" color="white" background="#59c0df"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+	<image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<view class="cu-form-group margin-top">
+		<view class="title">业主账户</view>
+		<view style="color: gray;">{{userInfo.userId}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">电话号码</view>
+		<view style="color: gray;">{{userInfo.phoneNumber}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">订单类型</view>
+		<view style="color: gray;">{{payItem.payType}}</view>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">金额</view>
+	    <view style="color: gray;">{{payItem.money}}元</view>
+	</view>
+	<view style="width: 100vw;height: 85rpx;display: flex;justify-content: center;bottom: 50rpx;position: absolute;">
+		<button style="width: 90%;height: 90%;line-height: 80rpx;background-color: rgb(138, 206, 245);color: white;" bind:tap="pay">立即付款</button>
+	</view>
+	<van-popup show="{{showPassword}}" custom-style="width:500rpx;height:300;border-radius:20rpx">
+	<image src="/images/关闭.png" style="width: 30rpx;height: 30rpx;padding: 30rpx;" bind:tap="getClosePassword"></image>
+			<view style="width: 100%;display: flex;justify-content: center;">
+				<view style="font-weight: 700;padding-top: 20rpx;">
+				请输入支付密码
+			</view>
+			</view>
+	 
+	  <view style="width: 100%;height: 80rpx;padding: 50rpx;display: flex;margin-left: -10rpx;">
+
+	  <input type="password" maxlength="1" style="width: 60rpx;background-color: rgb(226, 222, 222);border-radius: 10rpx;height: 60rpx;margin-left: 10rpx;font-size: 30rpx;text-align: center;" wx:for="1 in 6" value="{{paySixpassword[index]}}" bindinput="getSix" data-index="{{index}}"/>
+	  </view>
+	</van-popup>

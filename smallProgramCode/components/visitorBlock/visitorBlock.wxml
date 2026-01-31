@@ -1,0 +1,28 @@
+<wxs src="../../utils/time.wxs" module="ts"></wxs>
+<view style="width: 700rpx;height: 271rpx;border-radius: 20rpx;display: flex;align-items: center;flex-direction: column;justify-content: center;box-shadow: 4rpx 5rpx 10rpx rgb(229, 231, 231);" class="bg-mauve light">
+
+ 
+	<view style="font-size: 31rpx;font-weight: 700;margin-top:-5rpx;color: black;text-decoration:underline;">{{visitorItem.visitorUserName}}|{{visitorItem.sex}}|联系方式：{{visitorItem.phoneNumber}}</view>
+   
+
+<view style="display: flex;justify-content: center;width: 100%;flex-direction: column;align-items: flex-start;margin-left:60rpx ;margin-top: 20rpx;">  
+  <view><text>
+	<text style="font-weight: 700;">来访原因：</text>{{visitorItem.accompanyingNumber}} <text style="font-weight: 700;">，随行人数：</text> {{visitorItem.accompanyingNumber}}人<text style="font-weight: 700;">，被访人</text>：{{visitorItem.interviewee}}</text>
+  </view>
+  <view style="margin-top: 0rpx;"><text>
+	<text style="font-weight: 700;">证件</text>（{{visitorItem.credentialsType}} ）：{{visitorItem.credentials}}</text>
+  </view>
+  <view style="margin-top:30rpx;width: 92%;justify-content: flex-start;">
+	<view style="overflow:hidden;text-overflow: ellipsis;white-space: nowrap;white-space:normal;"><text style="font-weight: 700;">进入时间：</text>{{ts.timeFormatSeconds(visitorItem.enterTime)}}</view>
+    <view style="overflow:hidden;text-overflow: ellipsis;white-space: nowrap;white-space:normal"><text style="font-weight: 700;">离开时间：</text>{{ts.timeFormatSeconds(visitorItem.leavingTime)}}</view>
+  </view>
+  
+
+  <view style="display: flex;justify-content:flex-end;width: 90%;margin-top: -40rpx;"><text>
+	<text style="font-weight: 700;">门岗执勤保安：</text>{{visitorItem.staffUserName}}</text>
+  </view>
+
+ 
+</view>
+
+</view>

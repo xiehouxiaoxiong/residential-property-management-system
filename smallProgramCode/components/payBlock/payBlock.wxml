@@ -1,0 +1,28 @@
+<wxs src="../../utils/time.wxs" module="dateFormat"></wxs>
+<view style="width: 700rpx;height: 251rpx;background-color: white;border-radius: 20rpx;">
+<view style="display: flex;justify-content: space-between;width: 95%;">
+	<view style="padding: 30rpx;font-size: 31rpx;font-weight: 700;">{{payItem.payType}}</view>
+	<view style="display: flex;">
+		<view wx:if="{{payItem.payStatus==='已完成'}}" class="statusTextFin">{{payItem.payStatus}}</view>
+		<view wx:if="{{payItem.payStatus==='待支付'}}" class="statusText">{{payItem.payStatus}}</view>
+		<view wx:if="{{payItem.payStatus==='已取消'}}" class="statusTextQuxiao">{{payItem.payStatus}}</view>
+		<view wx:if="{{payItem.payStatus==='进行中'}}" class="statusTextJin">{{payItem.payStatus}}</view>
+	    <view style="margin-top: 25rpx;"><image src="/images/delete.png" style="width: 40rpx;height: 40rpx;margin-left: 20rpx;" bind:tap="deleteId" data-id="{{payItem.id}}"></image></view>
+	</view>
+    
+</view>
+<view style="display: flex;justify-content: flex-end;width: 95%;height: 100rpx;">
+
+  <view>下单时间：{{dateFormat.timeFormatSeconds(payItem.payTime)}}</view>
+</view>
+<view style="justify-content: flex-end;width: 95%;display: flex;font-size: 33rpx;font-weight: 700;margin-top: -20rpx;justify-content: space-between;" wx:if="{{payItem.payStatus==='待支付'}}">
+<view style="margin-top: -10rpx;margin-left: 30rpx;height: 20rpx;"> <button class="cu-btn round bg-blue" bind:tap="goToPay" data-item="{{payItem}}">去付款</button></view>
+<view>付款金额： ￥{{payItem.money}}</view></view>
+<view wx:if="{{payItem.payStatus==='进行中'}}">
+	<view style="color: red;font-size: 25rpx;width: 400rpx;margin-left: 50rpx;" bind:tap="goToPay" data-item="{{payItem}}">剩余时间：{{payItem.time.min}}分{{payItem.time.second}}秒,点击去支付</view>
+</view>
+
+<view style="justify-content: space-between;width: 95%;display: flex;margin-top: -40rpx;justify-content: flex-end;" wx:if="{{payItem.payStatus!=='待支付'}}">
+
+<view style="font-size: 33rpx;font-weight: 700;">付款金额： ￥{{payItem.money}}</view></view>
+</view>

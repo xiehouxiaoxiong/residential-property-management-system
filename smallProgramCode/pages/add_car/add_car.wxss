@@ -1,0 +1,254 @@
+@import "/iconfont/stylesheet.wxss";
+
+page {
+  background-color: #F3F3F3;
+  font-family: Roboto-Regular, Roboto;
+}
+
+.content {
+  position: absolute;
+  width: 128rpx;
+  height: 38rpx;
+  font-size: 32rpx;
+  color: #1F2635;
+  top: 78rpx;
+  left: 312rpx;
+}
+
+.top {
+  position: relative;
+  height: 176rpx;
+  background: linear-gradient(180deg, #30bdff 0%, rgba(255, 98, 48, 0) 100%);
+}
+
+.backText {
+  position: absolute;
+  width: 24rpx;
+  height: 48rpx;
+  left: 32rpx;
+  bottom: 50rpx;
+
+}
+
+.backText text {
+  font-size: 36rpx;
+  color: #000000;
+  font-weight: 800;
+}
+
+.middle {
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.middle .repair {
+  width: 38rpx;
+  height: 32rpx;
+  background: linear-gradient(90deg, #30bdff 0%, rgba(255, 98, 48, 0) 100%);
+  align-items: center;
+}
+
+.middle .detail {
+  width: 112rpx;
+  height: 32rpx;
+  font-size: 28rpx;
+  color: #686E88;
+}
+
+img {
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+}
+
+.user_wrap {
+  display: flex;
+  flex-direction: row;
+  padding: 24rpx;
+}
+
+.right_wrap {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24rpx;
+  height: 120rpx;
+}
+
+.right_wrap .user_name {
+  height: 60rpx;
+  font-size: 15px;
+  color: white;
+  margin-left: 100rpx;
+  width: 200rpx;
+  margin-top: -25rpx;
+  margin-left: 120rpx;
+}
+
+.right_wrap .user_count {
+  left: 105px;
+  top: 106px;
+  width: 40px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 27px;
+  background-color: rgba(255, 247, 215, 100);
+  color: rgba(162, 76, 55, 100);
+  font-size: 12px;
+  text-align: center;
+  font-family: Arial;
+  margin-left: 120rpx;
+}
+
+.my_shop {
+
+  width: 300px;
+  height: 20px;
+  color: rgba(255, 255, 255, 100);
+  font-size: 13px;
+  text-align: left;
+  font-family: PingFangSC-regular;
+  margin-top: -320rpx;
+  position: absolute;
+  margin-left: 460rpx;
+}
+
+.backpack {
+  height: 150rpx;
+  width: 710rpx;
+  margin-left: 22rpx;
+  background-color: white;
+  border-radius: 25rpx;
+  margin-top: -200rpx;
+  position: absolute;
+}
+
+.list_pos {
+  height: 150rpx;
+  width: 710rpx;
+  margin-left: 22rpx;
+  background-color: white;
+  border-radius: 25rpx;
+  margin-top: -200rpx;
+  position: absolute;
+}
+
+.my_wrap {
+  background-color: white;
+  padding: 12rpx;
+  margin: 12rpx;
+  border-radius: 24rpx;
+}
+
+.my_wrap .top_wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.my_wrap .top_wrap .title {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: 700;
+  padding: 12rpx;
+  color: #000000;
+}
+
+.my_wrap .top_wrap .all {
+  flex: 1;
+  text-align: right;
+  color: #575757;
+}
+
+.my_wrap .list_item {
+  display: flex;
+  flex-direction: row;
+  padding-top: 24rpx;
+}
+
+.my_wrap .list_item_pos {
+  display: flex;
+  flex-direction: column;
+  padding-top: 24rpx;
+}
+
+.my_wrap .list_item .list_wrap {
+  background-color: white;
+  border: none;
+  flex: 1;
+  text-align: center;
+}
+
+.my_wrap .list_item .list_wrap .img image {
+  height: 70rpx;
+  width: 70rpx;
+}
+
+.my_wrap .list_item .list_wrap .list_name {
+  padding-top: 12rpx;
+  font-size: 28rpx;
+}
+
+.guesslike {
+  display: flex;
+  flex-direction: row;
+}
+
+.xing {
+  margin-left: 270rpx;
+  width: 22px;
+  height: 22px;
+  margin-top: 20rpx;
+}
+
+.font {
+  width: 73px;
+  height: 26px;
+  line-height: 26px;
+  color: rgba(16, 16, 16, 100);
+  font-size: 16px;
+  text-align: center;
+  font-family: PingFangSC-regular;
+  font-weight: 600;
+  margin-left: -5rpx;
+  margin-top: 15rpx;
+}
+
+.nav_down {
+  height: 350px;
+  width: 98%;
+
+}
+
+.block_items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.nav_down_items {
+  width: 34%;
+  height: 400rpx;
+  background-color: white;
+  box-shadow: 0px 0rpx 12rpx 12rpx rgba(173, 173, 173, 0.5);
+  border-radius: 15rpx;
+  margin-top: 50rpx;
+  margin-left: 90rpx;
+}
+
+.nav_down_items_image {
+  height: 300rpx;
+  width: 250rpx;
+  border-radius: 15rpx;
+}
+
+.nav_down_items_text {
+  height: 50rpx;
+  width: 250rpx;
+  border-radius: 15rpx;
+}
+
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+}

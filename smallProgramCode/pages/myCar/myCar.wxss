@@ -1,0 +1,216 @@
+@import "/iconfont/stylesheet.wxss";
+
+page {
+  background-color: rgba(247, 248, 249);
+}
+
+.carInfo {
+  font-family: Roboto-Regular, Roboto;
+  font-weight: 400;
+  width: 100%;
+  height: 200%;
+
+}
+
+.nav_top {
+  position: relative;
+  display: flex;
+  height: 164rpx;
+  width: 100%;
+  background: linear-gradient(180deg, #30bdff 0%, rgba(255, 98, 48, 0) 100%);
+}
+
+
+.content {
+  width: 200rpx;
+  height: 38rpx;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: white;
+  margin: 70rpx auto;
+}
+
+.main_area {
+  width: 686rpx;
+  margin: 0 auto;
+
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 24rpx;
+  height: auto;
+  margin-bottom: 24rpx;
+  background-color: #fff;
+  border: 2rpx solid #fff;
+  border-radius: 20rpx;
+}
+
+.show_info {
+  display: flex;
+  height: 122rpx;
+  margin-bottom: 28rpx;
+}
+
+.show_info .show_left {
+  position: relative;
+  width: 100rpx;
+
+}
+
+.show_info .show_left .img {
+  position: absolute;
+  width: 84rpx;
+  height: 84rpx;
+  top: 12rpx;
+  left: 12rpx;
+}
+
+.show_info .show_left .img image {
+  width: 100%;
+  height: 100%;
+  border-radius: 42rpx;
+}
+
+.show_info .show_right {
+  margin-left: 18rpx;
+  margin-top: 14rpx;
+  width: 568rpx;
+  display: flex;
+  flex-direction: column;
+
+  border-bottom: 2rpx solid #E5E5E5;
+}
+
+.show_info .show_right .car_top {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.show_info .show_right .car_top .car_name {
+  height: 40rpx;
+  width: 266rpx;
+  color: #1F2635;
+  font-size: 28rpx;
+  margin-bottom: 0;
+}
+
+.show_info .show_right .car_top .edit {
+  margin-right: 16rpx;
+  color: #909090;
+  font-size: 28rpx;
+}
+
+.show_info .show_right .car_num {
+  width: 224rpx;
+  height: 28rpx;
+  font-size: 24rpx;
+  margin-top: 16rpx;
+  color: #686E88;
+}
+
+.show_IDCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+  font-size: 28rpx;
+  color: #1F2635;
+  margin-left: 16rpx;
+
+}
+
+.show_IDCard text {
+  color: #979797;
+  font-size: 28rpx;
+  margin-right: 16rpx;
+}
+
+.show_carInsurance {
+  position: relative;
+  display: flex;
+  height: 88rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #E5E5E5;
+}
+
+.show_carInsurance .left {
+  color: #1F2635;
+  width: 298rpx;
+  height: 44rpx;
+  font-size: 28rpx;
+  margin-left: 16rpx;
+}
+
+.show_carInsurance .right {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: flex-end;
+  width: 224rpx;
+  height: 34rpx;
+  font-size: 20rpx;
+  color: #686E88;
+  right: 42rpx;
+}
+
+.show_carInsurance text {
+  color: #979797;
+  font-size: 28rpx;
+  margin-right: 16rpx;
+}
+
+.cultivate {
+  position: relative;
+  display: flex;
+  height: 88rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cultivate .left {
+  color: #1F2635;
+  width: 298rpx;
+  height: 44rpx;
+  font-size: 28rpx;
+  margin-left: 16rpx;
+}
+
+.cultivate .right {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: flex-end;
+  width: 224rpx;
+  height: 34rpx;
+  font-size: 20rpx;
+  color: #686E88;
+  right: 42rpx;
+}
+
+.cultivate text {
+  color: #979797;
+  font-size: 28rpx;
+  margin-right: 16rpx;
+}
+
+.add_car {
+  height: 88rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid #fff;
+  border-radius: 8rpx;
+}
+
+.add_car button {
+  font-size: 32rpx;
+  color: rgba(255, 98, 48, 0.6);
+  background-color: #fff;
+}

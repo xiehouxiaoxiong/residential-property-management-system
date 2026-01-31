@@ -1,0 +1,114 @@
+
+.container {
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 750rpx;
+  height: 404rpx;
+  border-bottom-right-radius: 16rpx;
+  border-bottom-left-radius: 16rpx;
+}
+
+.general {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 686rpx;
+  height: 106rpx;
+  border-radius: 8rpx;
+  background-color: #FFFFFF;
+  box-shadow: 0rpx 0rpx 20rpx #d9d9d9;
+  z-index: 999;
+  
+}
+
+.headshot {
+  position: absolute;
+  top: 156rpx;
+  left: 32rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  opacity: 1;
+  object-fit: contain;
+  border: 4rpx solid #FFFFFF;
+  filter: blur(undefinedpx);
+}
+
+.name {
+  position: absolute;
+  width: auto;
+  height: 56rpx;
+  top: 160rpx;
+  left: 184rpx;
+  text-align: center;
+  font-size: 40rpx;
+}
+
+.level {
+  position: absolute;
+  width: 116rpx;
+  height: 40rpx;
+  top: 232rpx;
+  left: 184rpx;
+  background: linear-gradient(to left,rgb(230, 65, 0),#FC9D7F);
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+ 
+}
+.set-icon {
+  position: absolute;
+  width: 48rpx;
+  height: 48rpx;
+  right: 38rpx;
+  top: 170rpx;
+  opacity: 1;
+}
+.paddingMenu1{
+  padding-top: 70rpx;
+}
+.paddingMenu{
+  padding-top: 30rpx;
+}
+.general2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 686rpx;
+  height: 106rpx;
+  border-radius: 8rpx;
+  background-color: #FFFFFF;
+  box-shadow: 0rpx 0rpx 20rpx #d9d9d9;
+  z-index: 999;
+  padding-top: 30rpx;
+}
+.mineRepair {
+  display: flex;
+  justify-content: center;
+  width: 686rpx;
+  height: 356rpx;
+  margin-top: 20px;
+  border-radius: 8rpx;
+  background-color: #FFFFFF;
+  box-shadow: 0rpx 0rpx 20rpx #d9d9d9;
+}
+
+.mineRecord {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 686rpx;
+  height: 586rpx;
+  margin-top: 20px;
+  border-radius: 25rpx;
+  background-color: #FFFFFF;
+  box-shadow: 0rpx 0rpx 20rpx #d9d9d9;
+}
+.van-steps {
+  background-color: rgb(93, 194, 224,0.2) !important;
+  border-radius: 10px;
+}
+
+
+
+

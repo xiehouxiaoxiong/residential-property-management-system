@@ -1,0 +1,60 @@
+<navigation-bar title="个人信息" back="{{false}}" color="black" background="#59c0df"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+	<image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<scroll-view scroll-y="true" style="height: 1300rpx;top:150rpx;position: absolute;z-index: -1;">
+	<form>
+		<view class="cu-form-group margin-top" bindtap="ChooseImage">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">头像</view>
+			<view style="display: flex;width: 500rpx;justify-content: flex-end;">
+				<image src="{{userInfo.avatar}}" style="width:80rpx;height:80rpx;object-fit: cover;border-radius: 40rpx;"></image>
+			</view>
+
+			<image src="/images/enter.png" style="width: 40rpx;height: 40rpx;"></image>
+
+
+		</view>
+		<view class="cu-form-group">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">用户名</view>
+			<input style="font-size: 33rpx;" bind:tap="onClick" value="{{userInfo.userName}}" disabled></input>
+			<van-popup show="{{ showUserName }}" bind:close="onCloseUserName" custom-style="width:500rpx;height:400rpx" closeable round>
+				<div style="padding:40rpx;font-size:30rpx;width:300rpx;height:100rpx;position: absolute;font-weight: 700;">修改用户名</div>
+				<div style="position: absolute;top:100rpx;margin: 0 auto;display: flex;">
+
+					<van-cell-group style="border: 1rpx solid rgb(212, 212, 212);margin: 40rpx;">
+						<van-field value="{{ value }}" placeholder="请输入用户名" border="{{ false }}" bind:change="onChange" />
+					</van-cell-group>
+
+				</div>
+				<div style="width: 100%;justify-content: space-between;position: absolute;bottom: 40rpx;display: flex;">
+					<button style="width: 140rpx;height: 80rpx;font-size: 30rpx;" type="default" bind:tap="cancelUserName">取消</button>
+					<button style="width: 140rpx;height: 80rpx;font-size: 30rpx;" type="primary" bind:tap="confirmUserName">确认</button>
+				</div>
+
+			</van-popup>
+
+		</view>
+		<view class="cu-form-group">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">性别</view>
+			<picker bindchange="PickerChange" value="{{indexSex}}" range="{{arraySex}}">
+				<view class="picker" style="font-size: 33rpx;">
+					{{userInfo.sex}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group" wx:if="{{role=='业主'}}">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">用户ID</view>
+			<input placeholder="请填写" style="font-size: 33rpx;" value="{{userInfo.userId}}" disabled></input>
+		</view>
+		<view class="cu-form-group" wx:if="{{role=='员工'}}">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">工号</view>
+			<input placeholder="请填写" style="font-size: 33rpx;" value="{{userInfo.number}}" disabled></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">联系方式</view>
+			<input placeholder="请填写" style="font-size: 33rpx;" value="{{userInfo.phoneNumber}}"></input>
+		</view>
+
+	</form>
+
+</scroll-view>

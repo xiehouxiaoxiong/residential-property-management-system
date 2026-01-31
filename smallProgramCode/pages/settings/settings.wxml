@@ -1,0 +1,19 @@
+<navigation-bar title="设置" back="{{false}}" color="black" background="#59c0df"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+	<image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<form>
+	<view class="cu-form-group margin-top" bindtap="changePassword">
+		<view class="title" style="font-size: 33rpx;font-weight: 700;">密码</view>
+		<view style="display: flex;width: 500rpx;justify-content: flex-end;">
+			*****************
+		</view>
+		<image src="/images/enter.png" style="width: 40rpx;height: 40rpx;"></image>
+
+
+	</view>
+
+</form>
+<div style="width: 100%;display: flex;justify-content: center;">
+	<button type="primary" style="position: absolute;bottom: 40rpx;width: 500rpx;" bind:tap="logOut">退出登录</button>
+</div>

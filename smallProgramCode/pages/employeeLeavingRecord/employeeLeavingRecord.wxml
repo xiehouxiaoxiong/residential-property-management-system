@@ -1,0 +1,13 @@
+<navigation-bar title="请假记录" back="{{false}}" color="black" background="#59c0df"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+	<image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<scroll-view scroll-y="true" type="list" style="margin-top: 40rpx;height: 1100rpx;width: 100%;">
+ <view style="display: flex;flex-direction: column;">
+	<view wx:for="{{leavingRecordList}}" style="margin:10rpx auto">
+		<leavingRecordBlock leavingRecordItem="{{item}}"></leavingRecordBlock>
+	</view>
+   
+</view>
+
+</scroll-view>

@@ -1,0 +1,77 @@
+page {
+  background: #fff;
+}
+
+.bg {
+  height: 300rpx;
+  width: 100%;
+
+  background: linear-gradient(180deg, #59c0df -60%, rgba(98, 182, 212, 0) 100%);
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  position: absolute;
+}
+
+.pub_title {
+  font-size: 56rpx;
+  color: #000;
+  font-weight: bold;
+}
+
+.logs_main .wrap {
+  margin-top: 80rpx;
+}
+
+.logs_main .ipt_box {
+  line-height: 130rpx;
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.logs_main .ipt {
+  height: 130rpx;
+  line-height: 130rpx;
+  flex: 1;
+  font-size: 36rpx;
+  color: #222;
+}
+
+.logs_main .icon {
+  width: 32rpx;
+  height: 12rpx;
+}
+
+.logs_main .wrap_b {
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.logs_main .remember {
+  flex: 1;
+}
+
+.logs_main .remember checkbox {
+  margin-right: 30rpx;
+}
+
+.logs_main .wrap_b .forget_pwd {
+  font-size: 28rpx;
+  color: #2A7EFF;
+}
+
+.logs_main .tolog {
+  font-size: 32rpx;
+  color: #fff;
+  background: linear-gradient(90deg, rgb(48, 147, 204) 0%, #90c8e9 100%);
+  border-radius: 50rpx;
+  box-shadow: 0 10rpx 20rpx #c9e2fc;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-top: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

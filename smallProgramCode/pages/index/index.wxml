@@ -1,0 +1,34 @@
+<wxs src="../../utils/time.wxs" module="ts"></wxs>
+
+<navigation-bar title="小区物业系统" back="{{false}}" color="black" background="#59c0df"></navigation-bar>
+<van-notice-bar left-icon="volume-o" text="{{newNotice}}" style="--notice-bar-font-size:12px;--notice-bar-height:20px" />
+
+<view style="background-color:white;border-radius: 0 0 10px 10px;box-shadow: 0 3px 4px rgb(224, 222, 222);">
+  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <image src="{{item.picture}}" mode="aspectFill"></image>
+
+      </view>
+
+
+    </swiper-item>
+
+
+  </swiper>
+</view>
+<view style="width: 100%;margin-top: 10px;">
+  <van-divider contentPosition="center" customStyle="color:bg-gray; border-color:#cdcdcd; font-size: 13px;width:90%;margin:0 auto">
+    功能
+  </van-divider>
+</view>
+
+
+<view class="padding-sm">
+  <view class="flex flex-wrap justify-around">
+    <button class="cu-btn animation-{{animation==item.name?item.name:''}} margin-sm basis-sm shadow" bindtap="toggle" data-class="{{item.name}}" wx:for="{{IndexEventList}}" wx:key="{{index}}" style="height: 100px;background:{{backgroundList[index]}};box-shadow: 4px 4px 4px rgb(211, 210, 210);font-size: 33rpx;color: white;" data-index="{{index}}">
+      <image src="{{item.picture}}" style="width: 18px;height: 18px;object-fit: cover;margin-right: 10rpx;"></image>{{item.name}}
+    </button>
+  </view>
+  <button style="background:linear-gradient(135deg, rgb(239, 241, 117),white 100%)"></button>
+</view>

@@ -1,0 +1,37 @@
+<navigation-bar title="投诉咨询" back="{{false}}" color="black" background="#59c0df"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+	<image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<form>
+	<view class="cu-form-group margin-top">
+			<view class="title" style="font-weight: 700;font-size: 33rpx;">投诉类型</view>
+			<radio-group style="font-size: 33rpx;" bindchange="bindchange">
+				投诉<radio class="radio" value="投诉" checked="{{complaintInfo.complaintType==='投诉'}}"></radio>
+				建议<radio class="radio" value="建议" checked="{{complaintInfo.complaintType==='建议'}}"></radio>
+				咨询<radio class="radio" value="咨询" checked="{{complaintInfo.complaintType==='咨询'}}"></radio>
+			</radio-group>
+			
+		</view>
+	<view class="cu-form-group">
+		<view class="title" style="font-weight: 700;font-size: 33rpx;">投诉者</view>
+		<input placeholder="请填写姓名" value="{{complaintInfo.complaintUserName}}" bindinput="getComplaintUserName"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="font-weight: 700;font-size: 33rpx;">联系方式</view>
+		<input placeholder="请填写联系方式" value="{{complaintInfo.complaintPhoneNumber}}" bindinput="getComplaintPhoneNumber"></input>
+	</view>
+	<view class="cu-form-group align-start">
+		<view class="title" style="font-weight: 700;font-size: 33rpx;">投诉内容</view>
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaContentInput" placeholder="请填写投诉内容" value="{{complaintInfo.textareaContent}}"></textarea>
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="font-weight: 700;font-size: 33rpx;">投诉时间</view>
+		<input value="{{complaintInfo.complaintTime}}" disabled="true"></input>
+	</view>
+</form>
+<view style="position: absolute;bottom: 100rpx;width: 100%;">
+	<view class="padding flex flex-direction">
+
+	<button class="cu-btn bg-green margin-tb-sm lg" bind:tap="submit">提交</button>
+	</view>
+</view>

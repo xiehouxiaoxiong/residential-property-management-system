@@ -1,0 +1,78 @@
+<navigation-bar title="充值中心" back="{{false}}" color="black" background="#ffffff"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+	<image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<view class="cu-form-group margin-top">
+		<view class="title">业主账户</view>
+		<view style="color: gray;">{{userInfo.userId}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">电话号码</view>
+		<view style="color: gray;">{{userInfo.phoneNumber}}</view>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">充值金额</view>
+	
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="font-weight: 700;">￥</view>
+		<input placeholder="请输入金额" style="font-size: 40rpx;" type="number" bindinput="getMoney" value="{{money}}"></input>
+		<view bind:tap="clearInput">
+		<image src="/images/关闭.png" style="width: 30rpx;height: 30rpx;"></image></view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-3 padding-sm">
+			<view wx:for="{{moneyList}}" style="margin-top: 20rpx;">
+				<button class="cu-btn round line-blue" style="width: 200rpx;" bind:tap="getMoneyNumber" data-number="{{item}}">{{item}}元</button>
+			</view>
+		
+
+		</view>
+		
+	</view>
+	<view style="width: 100vw;height: 85rpx;display: flex;justify-content: center;bottom: 50rpx;position: absolute;">
+		<button style="width: 90%;height: 90%;line-height: 80rpx;background-color: rgb(138, 206, 245);color: white;" bind:tap="confirm">确认</button>
+	</view>
+	<van-popup show="{{showPay}}" custom-style="width:100%;height:600rpx" position="bottom">
+	<view style="width: 100%;justify-content: space-between;display: flex;">
+	    <view style="width: 150rpx;font-size:38rpx;padding: 20rpx;"><text style="text-align: center;">付款详情</text></view>
+		<view style="width: 35rpx;height: 35rpx;padding: 40rpx;" bind:tap="close">
+		   <image src="/images/关闭.png" style="width: 35rpx;height: 35rpx;"></image>
+		</view>
+	</view>
+	    
+		<view style="width: 100%;font-size:40rpx;padding: 20rpx;font-weight: 700;"><text style="text-align: center;">￥{{money}}元</text></view>
+        <view class="cu-form-group">
+		   <view style="color: gray;"> 订单信息</view>
+		   <view>小区物业系统业主账号充值</view>
+	   </view>
+	   <view class="cu-form-group">
+		   <view style="color: gray;"> 付款方式</view>
+		   <picker range="{{arrayPayMethod}}" bindchange="getPickerMethod" value="{{payMethod}}">
+		   <view>
+		   <view style="display:flex;height:100rpx;align-items: center;justify-content: flex-end;">
+			<image style="width: 30rpx;height: 30rpx" src="{{arrayIocn[payMethod]}}"></image> 
+		    <view>{{arrayPayMethod[payMethod]}}</view>
+		   </view>
+		
+		   </view>
+		 
+		   </picker>
+	   </view>
+		<view style="width: 100vw;height: 85rpx;display: flex;justify-content: center;bottom: 50rpx;position: absolute;">
+		<button style="width: 90%;height: 90%;line-height: 80rpx;background-color: rgb(138, 206, 245);color: white;" bind:tap="pay">立即付款</button>
+	</view>
+	</van-popup>
+	<van-popup show="{{showPassword}}" custom-style="width:500rpx;height:300;border-radius:20rpx">
+	<image src="/images/关闭.png" style="width: 30rpx;height: 30rpx;padding: 30rpx;" bind:tap="getClosePassword"></image>
+			<view style="width: 100%;display: flex;justify-content: center;">
+				<view style="font-weight: 700;padding-top: 20rpx;">
+				请输入支付密码
+			</view>
+			</view>
+	 
+	  <view style="width: 100%;height: 80rpx;padding: 50rpx;display: flex;margin-left: -10rpx;">
+
+	  <input type="password" maxlength="1" style="width: 60rpx;background-color: rgb(226, 222, 222);border-radius: 10rpx;height: 60rpx;margin-left: 10rpx;font-size: 30rpx;text-align: center;" wx:for="1 in 6" value="{{paySixpassword[index]}}" bindinput="getSix" data-index="{{index}}"/>
+	  </view>
+	</van-popup>

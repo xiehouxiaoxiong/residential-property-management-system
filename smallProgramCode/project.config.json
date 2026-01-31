@@ -1,0 +1,36 @@
+{
+    "appid": "wx723cacd8c9bade49",
+    "compileType": "miniprogram",
+    "libVersion": "3.4.2",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "setting": {
+        "coverView": true,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "enhance": true,
+        "showShadowRootInWxmlPanel": true,
+        "packNpmManually": true,
+        "packNpmRelationList": [
+            {
+                "packageJsonPath": "./package.json",
+                "miniprogramNpmDistDir": "./"
+            }
+        ],
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "minifyWXSS": false
+    },
+    "condition": {},
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    },
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
+}

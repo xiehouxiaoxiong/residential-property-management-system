@@ -1,0 +1,29 @@
+
+<view class="nav_top">
+    <image src="/images/return.png" style="width: 50rpx;height: 50rpx;position: absolutes;top: 75rpx;z-index:999" bindtap="back"></image>
+      
+       
+</view>
+<view class="wholeContinaer">
+	<map id="myMap" markers="{{markers}}" style="width:100%;height:100vh;" longitude="{{poi.longitude}}" latitude="{{poi.latitude}}" scale='16' show-location>
+	</map>
+
+	<view class="checkInPanel">
+	
+		<view class="checkInBtn {{canClick ? 'checkBtnBlue' : 'disableClick'}}" bindtap="checkIn">
+			<view class="checkInTitle">签到</view>
+			<view class="checkInTime {{canClick ? 'checkBtnBlue' : 'disableClick'}}">{{time}}</view>
+		</view>
+	
+		<view class="whitePositionPanel">
+			<view class="positonTextRow">
+				<image class="positionIcon" src="../../images/location/positionIcon.png"></image>
+				<view class="positionFont">{{addressName}}</view>
+			</view>
+		</view>
+		<view class="rePosition" bindtap="rePosition">
+			<image class="positionIcon" src="../../images/location/rePosition.png"></image>
+			<view class="positionFont">重新定位</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,94 @@
+page{background: #fff;}
+
+.operate-wrapper {
+  display: flex;
+  color: #2A7EFF;
+}
+.pub_title {
+  font-size: 56rpx;
+  color: #000;
+  font-weight: bold;
+}
+radio{
+  transform: scale(0.5);
+}
+.logs_main .wrap {
+  margin-top: 80rpx;
+}
+
+.logs_main .ipt_box {
+  line-height: 130rpx;
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.logs_main .ipt {
+  height: 130rpx;
+  line-height: 130rpx;
+  flex: 1;
+  font-size: 36rpx;
+  color: #222;
+}
+
+.logs_main .icon {
+  width: 32rpx;
+  height: 12rpx;
+}
+
+.logs_main .wrap_b {
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.logs_main .remember {
+  flex: 1;
+}
+
+.logs_main .remember checkbox {
+  margin-right: 30rpx;
+}
+
+.logs_main .wrap_b .forget_pwd {
+  font-size: 28rpx;
+  color: #2A7EFF;
+}
+
+
+
+
+.forget_pwd_main .send {
+  color: #2A7EFF;
+  font-size: 34rpx;
+}
+
+.forget_pwd_main .wrap_b {
+  font-size: 28rpx;
+  color: #D1D1D1;
+}
+
+.register {
+  font-size: 28rpx;
+  
+}
+
+.tologin{
+  background: linear-gradient(90deg, rgb(48, 147, 204) 0%, #90c8e9 100%);
+   color: white;
+   width: auto;
+   height: 100rpx;
+   line-height: 100rpx;
+   text-align: center;
+   border-radius: 50rpx;
+   margin-top: 200rpx;
+}
+.bg{
+  height: 300rpx;
+    width: 100%;
+    background: linear-gradient(180deg, #59c0df -60%, rgba(98,182,212,0) 100%);
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    position:absolute;
+}

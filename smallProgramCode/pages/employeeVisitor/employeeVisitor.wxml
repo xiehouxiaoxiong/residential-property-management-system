@@ -1,0 +1,84 @@
+
+<navigation-bar title="访客登记" back="{{false}}" color="black" background="#59c0df"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+	<image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<form>
+	<view class="cu-form-group margin-top">
+		<view class="title" style="font-size: 33rpx;font-weight: 700;">姓名</view> 
+		<input placeholder="请填写姓名" style="font-size: 33rpx;" bind:input="onClick" value="{{visitorInfo.userName}}"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="font-size: 33rpx;font-weight: 700;">联系方式</view> 
+		<input placeholder="请填写联系方式" style="font-size: 33rpx;" value="{{visitorInfo.phoneNumber}}" bind:input="getPhoneNumber"></input>
+	</view>
+	<view class="cu-form-group">
+			<view class="title" style="font-weight: 700;font-size: 33rpx;">性别</view>
+		
+			<radio-group style="font-size: 33rpx;" bindchange="bindchangeSex">
+				男<radio class="radio" value="男" checked="{{visitorInfo.sex==='男'}}" style="transform: scale(0.5);"></radio>
+				女<radio class="radio" value="女" checked="{{visitorInfo.sex==='女'}}" style="transform: scale(0.5);"></radio>
+			
+			</radio-group>
+			
+		</view>
+	<view class="cu-form-group">
+		<picker bindchange="PickerCredentialsType" value="{{visitorInfo.credentialsType}}" range="{{arrayCredentialsType}}" style="left:30rpx;position:absolute;font-weight:700">
+			<view class="picker" style="font-size: 33rpx;">
+				{{visitorInfo.credentialsType?visitorInfo.credentialsType:'证件类型'}}
+			</view>
+		</picker>
+		<input placeholder="请填写证件" style="font-size: 33rpx;margin-left: 200rpx;" bind:input="getCredentials" value="{{visitorInfo.credentials}}"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="font-size: 33rpx;font-weight: 700;">来访原因</view>
+		<input placeholder="请填写来访原因" style="font-size: 33rpx;" value="{{visitorInfo.visitorReason}}" bind:input="onClickReason"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="font-size: 33rpx;font-weight: 700;">随行人数</view>
+		<input placeholder="请填写" style="font-size: 33rpx;" value="{{visitorInfo.accompanyingNumber}}" bindinput="onChangeAccompanyingNumber"></input>人
+		
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="font-size: 33rpx;font-weight: 700;">被访人</view>
+		<input placeholder="请填写" style="font-size: 33rpx;" value="{{visitorInfo.interviewee}}" bindinput="onChangeInterviewee"></input>
+	</view>
+	<view class="cu-form-group" bind:tap="getEnterTime">
+		<view class="title" style="font-size: 33rpx;font-weight: 700;">进入时间</view>
+		<input placeholder="请选择进入时间" value="{{visitorInfo.enterTime}}" disabled style="font-size: 33rpx;"></input>
+
+	</view>
+	<view class="cu-form-group" bind:tap="getLeavingTime">
+		<view class="title" style="font-size: 33rpx;font-weight: 700;">离开时间</view>
+		<input placeholder="请选择离开时间" value="{{visitorInfo.leavingTime}}" disabled style="font-size: 33rpx;"></input>
+		
+	   
+		
+	</view>
+
+</form>
+<view>
+	<view class="padding flex flex-direction">
+
+  <button class="cu-btn bg-green margin-tb-sm lg" bind:tap="submit">提交</button>
+</view>
+</view>
+
+
+<van-popup
+      show="{{showEnterTime}}"
+      position="bottom"
+      label="进入时间"
+      custom-style="height: 50%;"
+      bind:close="onCancel"
+    >
+		<van-datetime-picker type="datetime" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:confirm="onConfirm" formatter="{{ formatter }}" bind:cancel="onCancel"/>
+</van-popup>
+<van-popup show="{{showLeavingTime}}"
+      position="bottom"
+      label="离开时间"
+      custom-style="height: 50%;"
+      bind:close="onCancelLeaving">
+			<van-datetime-picker type="datetime" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:confirm="onConfirmLeaving" formatter="{{ formatter }}" bind:cancel="onCancelLeaving" 
+			/>
+</van-popup>

@@ -1,0 +1,23 @@
+<navigation-bar title="账单记录" back="{{false}}" color="white" background="#59c0df"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+  <image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<view class="cu-bar bg-white search fixed" style="top:65px">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="搜索" confirm-type="search" bindinput="searchIcon"></input>
+  </view>
+</view>
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" style="margin-top:125rpx">
+  <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{tabList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{tabList[index]}}
+  </view>
+
+
+</scroll-view>
+<scroll-view scroll-y="true" style="height: 1000rpx;width: 100%">
+  <view style="display: flex;justify-content: center;margin-top: 20rpx;" wx:for="{{payList}}" wx:index="{{index}}" wx:key="item">
+
+    <payBlock payItem="{{item}}"></payBlock>
+  </view>
+</scroll-view>

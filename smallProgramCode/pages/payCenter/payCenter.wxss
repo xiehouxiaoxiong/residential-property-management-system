@@ -1,0 +1,4 @@
+/* pages/payCenter/payCenter.wxss */
+page{
+	background-color: rgb(240, 239, 239);
+}

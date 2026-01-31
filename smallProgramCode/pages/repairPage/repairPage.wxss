@@ -1,0 +1,42 @@
+page {
+  background-color: #F7F8F9;
+}
+
+.tab_text {
+  padding: 2px 5px;
+  text-align: center;
+  background-color: #FFFFFF;
+  color: #1e252f;
+  border-radius: 5px;
+  margin-top: 10rpx;
+  width: 35rpx;
+
+}
+
+.tab_select_text {
+  text-align: center;
+  background-color: #0A4869;
+  color: #FFFFFF;
+  border-radius: 10rpx 13rpx 13rpx 9rpx;
+  margin-top: -3rpx;
+  width: 57rpx;
+}
+
+.tab_text1 {
+
+  margin-top: -8rpx;
+}
+
+.tab_select_text1 {
+  margin-top: 10rpx;
+
+}
+
+.tab_select_text2 {
+  text-align: center;
+  background-color: #0A4869;
+  color: #FFFFFF;
+  border-radius: 13rpx 10rpx 10rpx 13rpx;
+  margin-top: -3rpx;
+  width: 85rpx;
+}

@@ -1,0 +1,8 @@
+.statusText{
+	color: red;
+	margin-top: 30rpx;
+}
+.statusTextFin{
+  color: green;
+  margin-top: 30rpx;
+}

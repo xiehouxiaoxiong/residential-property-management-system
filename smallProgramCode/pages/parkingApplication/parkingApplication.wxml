@@ -1,0 +1,70 @@
+<navigation-bar title="车位申请" back="{{false}}" color="black" background="#59c0df"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+	<image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<scroll-view scroll-y="true" style="height: 1300rpx;top:150rpx;position: absolute;z-index: -1;">
+	<form>
+		<view class="cu-form-group margin-top">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">车牌号</view>
+			<picker bindchange="PickerChangelicenseNumber" value="{{parkingApplication.licenseNumber}}" range="{{arrayLicenseNumber}}">
+				<view class="picker" style="font-size: 33rpx;">
+					{{parkingApplication.licenseNumber?parkingApplication.licenseNumber:'请选择车牌号'}}
+				</view>
+			</picker>
+
+		</view>
+
+		<view class="cu-form-group">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">停车场</view>
+			<picker bindchange="PickerChangeParking" value="{{parkingName}}" range="{{arrayparkingName}}">
+				<view class="picker" style="font-size: 33rpx;">
+					{{parkingName?parkingName:'请选择停车场'}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group" bind:tap="goToNumber">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">车位号</view>
+			<picker bindchange="PickerChangeNumber" value="{{parkingNumber}}" range="{{arrayparkingNumber}}" disabled="{{disabled}}">
+				<view class="picker" style="font-size: 33rpx;">
+					{{parkingNumber?parkingNumber:'请选择车位号'}}
+				</view>
+			</picker>
+		</view>
+
+
+		<view class="cu-form-group">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">使用人</view>
+			<input placeholder="请填写" style="font-size: 33rpx;" value="{{parkingApplication.applicationUserName}}" bindinput="getApplicationUserName"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">联系方式</view>
+			<input placeholder="请填写" style="font-size: 33rpx;" value="{{parkingApplication.applicationPhoneNumber}}" bindinput="getApplicationPhoneNumber"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">车位开始使用时间</view>
+			<picker mode="date" value="{{parkingApplication.parkingStartTime}}" start="{{nowDay}}" end="2040-04-01" bindchange="DateStartChange">
+				<view class="picker">
+					{{parkingApplication.parkingStartTime}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group">
+			<view class="title" style="font-size: 33rpx;font-weight: 700;">车位结束使用时间</view>
+			<picker mode="date" value="{{parkingApplication.parkingEndTime}}" start="{{nowDay}}" end="2040-04-01" bindchange="DateEndChange">
+				<view class="picker">
+					{{parkingApplication.parkingEndTime}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group">
+			<view class="title" style="font-size: 30rpx;">（车位费固定70元/车/月）</view>
+
+		</view>
+	</form>
+	<view style="height: 400rpx;">
+		<view class="padding flex flex-direction">
+
+			<button class="cu-btn bg-green margin-tb-sm lg" bind:tap="submit">提交</button>
+		</view>
+	</view>
+</scroll-view>

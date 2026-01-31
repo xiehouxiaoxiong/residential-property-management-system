@@ -1,0 +1,97 @@
+<view class="container">
+  <view style=" background:  #59c0df;height:420rpx;width: 750rpx;top:0rpx;position: absolute;">
+  </view>
+  <image class="headshot" src="{{userInfo.avatar}}" bindtap="goToPersonal"></image>
+  <text class="name">{{userInfo.userName}}</text>
+  <view class="level">
+    <text style="display: block;margin-left: 30rpx;color: white;font-size: 20rpx;line-height: 35rpx;" wx:if="{{role==='员工'}}">{{userInfo.employeeType}}</text>
+    <text style="display: block;margin-left: 30rpx;color: white;font-size: 20rpx;line-height: 35rpx;" wx:if="{{role==='业主'}}">{{role}}</text>
+  </view>
+  <image class="set-icon" src="{{SettingIconUrl}}" bindtap="goToSetting"></image>
+</view>
+
+<view style="display: flex;justify-content: center;width: 100%;margin-top: 160px;" wx:if="{{role==='员工'}}">
+  <view class="general {{userInfo.employeeType=='保安'?'paddingMenu1':'paddingMenu'}}">
+    <van-row>
+      <van-col span="6" wx:for="{{menuList}}" wx:key="item">
+        <view style="display: flex;flex-direction: column;width: 170rpx;">
+          <view style="justify-content: center;display: flex;">
+            <image bindtap="goToMenu" src="{{item.url}}" data-index="{{index}}" style="width: 30px;height: 30px;"></image>
+          </view>
+
+          <view style="margin: 0 auto;">{{item.name}}</view>
+        </view>
+
+      </van-col>
+    </van-row>
+
+
+
+
+  </view>
+</view>
+
+<view style="display: flex;justify-content: center;width: 100%;margin-top: 150px;" wx:if="{{role==='业主'}}">
+  <view class="general2">
+    <van-row>
+      <van-col span="6" wx:for="{{menuList}}" wx:key="item">
+        <view style="display: flex;flex-direction: column;width: 170rpx;">
+          <view style="justify-content: center;display: flex;">
+            <image bindtap="goToMenu" src="{{item.url}}" data-index="{{index}}" style="width: 30px;height: 30px;"></image>
+          </view>
+
+          <view style="margin: 0 auto;">{{item.name}}</view>
+        </view>
+
+      </van-col>
+    </van-row>
+
+
+
+
+  </view>
+</view>
+<view style="display: flex;justify-content: center;" wx:if="{{role==='业主'}}">
+  <view class="mineRepair">
+    <view style="display: flex;flex-direction: column;width: 100%">
+      <view style="padding: 20px;font-size: 15px;font-weight: 700;margin: 0 auto;">报修流程</view>
+      <view style="width: 90%;height: 80px;margin: 0 auto;">
+        <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#38f" />
+      </view>
+
+
+    </view>
+
+  </view>
+
+</view>
+<view style="display: flex;justify-content: center;" wx:if="{{role==='业主'}}">
+  <view class="mineRecord">
+    <view class="cu-bar justify-left bg-white">
+      <view class="action sub-title" style="position: relative;">
+        <text class="text-xl text-bold text" style="font-size: 15px;color: rgb(94, 167, 236)">记录本</text>
+        <text class="bg-blue" style="width:80rpx;position: absolute;top:60rpx"></text>
+
+      </view>
+    </view>
+    <view style="display: flex;width: 100%;justify-content: center;margin-top: 10px;" wx:for="{{recordList}}" wx:key="item">
+      <view style="display: flex;justify-content: space-between;width: 90%;border-bottom:1px solid rgb(226, 226, 226);height: 80rpx;align-items: center;" bindtap="goToRecord" data-index="{{index}}">
+
+        <view style="display: flex;">
+          <image src="{{item.icon}}" mode="aspectFit" style="width: 20px;height:20px;"></image>
+          <view style="display: flex;">
+
+            <text style="color: black;font-size: 15px;margin-left: 5px;">{{item.name}}</text>
+          </view>
+        </view>
+        <view>
+          <image src="/images/enter.png" mode="aspectFit" style="width: 15px;height:15px;margin-top:2px"></image>
+        </view>
+      </view>
+
+
+    </view>
+
+  </view>
+
+</view>

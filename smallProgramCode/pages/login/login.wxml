@@ -1,0 +1,52 @@
+<view class="logs_main">
+
+  <view class="bg"></view>
+  <image src="/images/return.png" style="height: 40rpx;width:40rpx;position: absolute;top: 90rpx;left: 40rpx;" bindtap="back"></image>
+  <view style="padding: 40rpx;">
+    <view class="cu-bar justify-center">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue" style="margin-top: 50rpx;">登录物业系统</text>
+      <text class="text-ABC text-blue">login</text>
+
+    </view>
+  </view>
+    <view class="wrap">
+      <view class="ipt_box">
+        <input type="number" value="{{telephone}}" class="ipt" maxlength="11" bindinput="setPhone" placeholder="请输入工号" wx:if="{{role==='员工'}}"/>
+        <input type="number" value="{{telephone}}" class="ipt" maxlength="11" bindinput="setPhone" placeholder="请输入手机号" wx:if="{{role==='业主'}}"/>
+      
+      </view>
+      <view class="ipt_box">
+        <block wx:if="{{inputType == 'password'}}">
+          <input type="password" value="{{password}}" bindinput="setPwd" maxlength="20" class="ipt" placeholder="请输入密码" />
+        </block>
+        <block wx:else>
+          <input type="text" value="{{password}}" bindinput="setPwd" maxlength="20" class="ipt" placeholder="请输入密码" />
+        </block>
+        <view bindtap="showPwd">
+          <block wx:if="{{inputType == 'password'}}">
+           
+          </block>
+          <block wx:else>
+         
+          </block>
+        </view>
+      </view>
+      <view class="wrap_b">
+        <view class="remember">
+          <radio-group style="font-size: 25rpx;" bindchange="bindchange">
+          业主<radio class="radio" value="业主" checked="{{role==='业主'}}" ></radio>
+          员工<radio class="radio" value="员工" checked="{{role==='员工'}}"></radio>
+          
+        </radio-group>
+        </view>
+        <view class="operate-wrapper">
+          <navigator hover-class="none" url="/pages/register/register" class="register" style="color: #59c0df;" wx:if="{{role==='业主'}}">注册</navigator>
+          <view style="margin: 0 20rpx;color: #59c0df;" wx:if="{{role==='业主'}}"> / </view>
+          <navigator hover-class="none" url="../forgetPassword/forgetPassword" class="forget_pwd" style="color: #59c0df;">忘记密码？</navigator>
+        </view>
+      </view>
+    </view>
+    <view class="tologin" bindtap="login">登录</view>
+  </view>
+</view>

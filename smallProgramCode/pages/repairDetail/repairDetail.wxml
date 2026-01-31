@@ -1,0 +1,85 @@
+<navigation-bar title="报修详情" back="{{false}}" color="black" background="#59c0df"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+  <image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<view style="background:linear-gradient( 105deg,#59c0df,rgb(240,255,255) 100%);width: 100%;height: 40rpx;padding:30rpx;font-size: 33rpx;font-weight: 700;">报修信息</view>
+<view style="background-color:white;width: 100%;height: 90rpx;padding:30rpx;font-size: 30rpx;font-weight: 700;border-top:1rpx solid rgb(212, 210, 210)">
+  <view>报修人：{{repairItem.userName}}</view>
+  <view style="color: rgb(177, 174, 174);font-size: 24rpx;">报修时间：{{repairItem.repairDate}}</view>
+</view>
+<view style="background-color:white;width: 100%;height: 50rpx;padding:30rpx;font-size: 30rpx;font-weight: 700;border-top:1rpx solid rgb(212, 210, 210)">
+  <view>报修项目：{{repairItem.repairEvent}}</view>
+
+</view>
+<view style="background-color:white;width: 100%;height: 50rpx;padding:30rpx;font-size: 30rpx;font-weight: 700;border-top:1rpx solid rgb(212, 210, 210)">
+  <view>报修内容：{{repairItem.repairDetail}}</view>
+
+</view>
+<view style="background-color:white;width: 100%;height: 50rpx;padding:30rpx;font-size: 30rpx;font-weight: 700;border-top:1rpx solid rgb(212, 210, 210)">
+  <view>报修地址：{{repairItem.repairAddress}}</view>
+
+</view>
+
+<view style="background-color:white;width: 100%;height: 50rpx;padding:30rpx;font-size: 30rpx;font-weight: 700;border-top:1rpx solid rgb(212, 210, 210);margin-top: 20rpx;">
+  <view style="color: #59c0df;">报修进度</view>
+
+</view>
+<view style="display: flex;justify-content: center;">
+  <view class="mineRepair">
+    <view style="display: flex;flex-direction: column;width: 100%;align-items: center;">
+
+      <view style="width: 90%;height: 50px;margin: 50rpx auto;">
+        <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#38f" />
+      </view>
+
+      <button class="cu-btn bg-{{status==='更新状态'?'blue':'gray'}} lg" wx:if="{{role=='员工'&&active!==4}}" bind:tap="onClick">{{status}}</button>
+      <button class="cu-btn bg-blue lg" wx:if="{{role=='业主'&&active===3}}" bind:tap="goToEvaluation">去评价</button>
+
+
+    </view>
+
+    <view style="margin-left: 40rpx;" wx:if="{{active==4}}">
+      <view style="font-size: 30rpx;">
+        <text style="font-weight: 700;">评价人:</text>{{repairItem.userName}}
+      </view>
+      <view style="font-size: 30rpx;display: fl;">
+        <text style="font-weight: 700;">满意度:</text>
+
+        <block wx:for="{{stars}}" style="display: flex;flex-direction: row;" wx:index="{{index}}">
+
+          <image src="{{index<=repairItem.degreeOfSat?'./images/stared.png':'./images/star.png'}}" style="width: 20rpx;height: 20rpx;"></image>
+        </block>
+      </view>
+      <view style="font-size: 30rpx;">
+        <text style="font-weight: 700;">评价内容:</text>{{repairItem.evaluation}}
+      </view>
+    </view>
+  </view>
+
+</view>
+<van-popup show="{{ showEvaluation }}" bind:close="onClose" custom-style="height:600rpx" closeable round position="bottom">
+  <div style="font-size:45rpx;width:100%;height:100rpx;font-weight: 700;display: flex;justify-content: center;margin-top: 60rpx;">满意度</div>
+  <div style="margin-top:30rpx;display: flex;justify-content: center;">
+
+    <block wx:for="{{stars}}" wx:key="*this" wx:item="{{item}}">
+
+      <image class="star-image" style="margin-left:20rpx" src="{{key>=item?selectedSrc:normalSrc}}" data-index="{{item}}" bindtap="selectServer">
+
+      </image>
+
+    </block>
+
+
+  </div>
+
+  <view style="width: 90%;background-color: rgb(236, 235, 235);height: 160rpx;margin:20rpx auto">
+    <textarea maxlength="-1" bindinput="getevaluationContent" value="{{evaluationContent}}" placeholder="关于维修服务，我想说!" style="display: block;width: 90%;height: 100%;"></textarea>
+  </view>
+
+
+  <view style="width: 100%;justify-content: space-between;position: absolute;bottom: 40rpx;display: flex;">
+
+    <button style="width: 140rpx;height: 80rpx;font-size: 30rpx;" type="primary" bindtap="confirmEva">确认</button>
+  </view>
+
+</van-popup>

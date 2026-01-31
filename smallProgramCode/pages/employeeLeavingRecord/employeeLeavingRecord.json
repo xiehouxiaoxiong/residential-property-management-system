@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "leavingRecordBlock":"/components/leavingRecord/leavingRecord",
+        "navigation-bar":"/components/navigation-bar/navigation-bar"
+    }
+}

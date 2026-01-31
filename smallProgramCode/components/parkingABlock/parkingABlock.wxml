@@ -1,0 +1,44 @@
+
+<wxs src="../../utils/time.wxs" module="dateFormat" />
+<view style="width: 700rpx;background-color: white;border-radius: 20rpx;display: flex;align-items: center;flex-direction: column;box-shadow: 4rpx 4rpx 7rpx rgb(226, 224, 224);" class="{{parkingAItem.auditResult==='已失效'?'shixiao':'classTong'}}">
+
+<view style="display: flex;width: 100%;height: 60rpx;justify-content: space-between;">
+<view style="background-color: black;margin-left: 40rpx;margin-top: 20rpx;">
+  <image src="./images/parking.png" style="width: 40rpx;height: 40rpx;object-fit: cover;"></image>
+</view>
+
+	<view style="font-size: 38rpx;font-weight: 700;margin-top:20rpx;width: 400rpx;">{{parkingAItem.applicationUserName}}</view>
+  <view style="width: 150rpx;display: flex;font-size: 30rpx;font-weight: 700;margin-top: 40rpx;height: 100%;align-items: center;justify-content: center;margin-right: 30rpx;">
+
+    <button class="cu-btn round line-red shadow" wx:if="{{parkingAItem.auditResult=='不通过'}}">{{parkingAItem.auditResult}}</button>
+    <button class="cu-btn round line-blue shadow" wx:if="{{parkingAItem.auditResult=='待审核'}}">{{parkingAItem.auditResult}}</button>
+    <button class="cu-btn round line-green shadow" wx:if="{{parkingAItem.auditResult=='通过'}}">{{parkingAItem.auditResult}}</button>
+    <button class="cu-btn round bg-yellow shadow" wx:if="{{parkingAItem.auditResult=='申请成功'}}">{{parkingAItem.auditResult}}</button>
+    <button class="cu-btn round bg-gray shadow" wx:if="{{parkingAItem.auditResult=='已失效'}}">{{parkingAItem.auditResult}}</button>
+    </view>
+</view>
+<view style="display: flex;width: 100%;flex-direction: column;margin-top: 30rpx;padding-left:100rpx;">
+  <view style="overflow:hidden;text-overflow: ellipsis;white-space: nowrap;width: 500rpx;text-decoration: underline;text-decoration-color: blue;"><text style="font-weight: 700;">车牌号</text>：{{parkingAItem.licenseNumber}}（{{parkingAItem.carColor}}——{{parkingAItem.cardType}}）</view>
+  <view style="display: flex;justify-content: center;width: 100%;"><text style="width: 100%;height: 20rpx;">
+    <text style="font-weight: 700;">汽车品牌</text>：{{parkingAItem.carBrand}}| <text style="font-weight: 700;">停车场：</text>{{parkingAItem.parkingName}},{{parkingAItem.parkingNumber}}号</text>
+  </view>
+  <view style="display: flex;justify-content: center;width: 100%;"><text style="height: 40rpx;width: 400rpx;">
+	</text>
+  </view>
+
+  <view style="display: flex;width: 600rpx;height: 20rpx"><text style="margin-top: -20rpx;word-break: break-all;">
+    <text style="font-weight: 700;">联系方式：</text>{{parkingAItem.applicationPhoneNumber}}| <text style="font-weight: 700;">申请车位时间：</text>{{dateFormat.timeFormatSeconds(parkingAItem.parkingStartTime)}}~{{dateFormat.timeFormatSeconds(parkingAItem.parkingEndTime)}}</text>
+  </view>
+  <view style="margin-top: 18rpx;" wx:if="{{parkingAItem.auditOpinion&&parkingAItem.auditResult!='通过'&&parkingAItem.auditOpinion&&parkingAItem.auditResult!='申请成功'}}">
+  <text style="color: red;">审核意见:{{parkingAItem.auditOpinion}}</text></view>
+  <view style="display: flex;justify-content: space-between;width: 90%;" wx:if="{{parkingAItem.auditResult=='通过'}}">
+    <view style="margin-top: 18rpx;">
+
+  </view>
+  <view style="margin-top: 18rpx;justify-content: flex-end;width: 150rpx;display: flex;">
+    <button class="cu-btn round bg-green shadow" bind:tap="goToPay">去支付</button></view>
+  </view>
+
+</view>
+
+</view>

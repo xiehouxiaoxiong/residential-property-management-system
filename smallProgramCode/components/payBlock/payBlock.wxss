@@ -1,0 +1,18 @@
+.statusText{
+	color: red;
+	margin-top: 30rpx;
+}
+@import "/colorui/icon.wxss";
+@import "/colorui/main.wxss";
+.statusTextFin{
+  color: green;
+  margin-top: 30rpx;
+}
+.statusTextQuxiao{
+	color: gray;
+	margin-top: 30rpx;
+  }
+.statusTextJin{
+	color: yellow;
+	margin-top: 30rpx;
+}

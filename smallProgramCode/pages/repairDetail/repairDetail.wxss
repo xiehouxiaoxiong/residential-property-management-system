@@ -1,0 +1,16 @@
+.mineRepair {
+	display: flex;
+	width: 686rpx;
+	height: 356rpx;
+	margin-top: 20px;
+	border-radius: 8rpx;
+	background-color: #FFFFFF;
+	box-shadow: 0rpx 0rpx 20rpx #d9d9d9;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.star-image {
+	width: 50rpx;
+	height: 50rpx;
+}

@@ -1,0 +1,67 @@
+<navigation-bar title="请假申请" back="{{false}}" color="black" background="#59c0df"></navigation-bar>
+<view style="height:50rpx;width:50rpx;margin-top:-72rpx;" bindtap="back">
+	<image src="/images/return.png" style="height:50rpx;width:50rpx;margin-left: 20rpx;"></image>
+</view>
+<form>
+	<view class="cu-form-group margin-top">
+		<view class="title" style="font-size: 33rpx;font-weight: 700;">请假时间</view> 
+		<input placeholder="请选择开始时间" style="font-size: 33rpx;" value="{{leavingDateStart}}" disabled bind:tap="getEnterTime"></input>
+		
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="font-size: 33rpx;font-weight: 700;margin-left: 80rpx;"></view> 
+	    <text style="color: black;font-size:33rpx ;">~</text>
+		<input placeholder="请选择结束时间" value="{{leavingDateEnd}}" disabled style="font-size: 33rpx;margin-left: 40rpx;" bind:tap="getLeavingTime"></input>
+	</view>
+	<view class="cu-form-group">
+		
+		<picker bindchange="pickerPretext" range="{{arrayPretext}}" style="left:30rpx;position:absolute;font-weight:700">
+			<view class="picker" style="font-size: 33rpx;">
+			事由类型
+			</view>
+		</picker>
+		<input placeholder="请选择事由类型" style="font-size: 33rpx;margin-left: 180rpx;" bind:input="onClick" value="{{leavingInfo.pretext}}" disabled></input>
+	</view>
+	<view class="cu-form-group">
+			<view class="title" style="font-weight: 700;font-size: 33rpx;">外出地点</view>
+		    <view style="margin-left: 170rpx;position: absolute;">
+				<address-selecter bind:select="addressSelecter" address="{{address}}"></address-selecter>
+			</view>
+			
+			
+		</view>
+		<view class="cu-form-group">
+			<view class="title" style="font-weight: 700;font-size: 33rpx;">详细地址</view>
+			<input placeholder="请填写详细地址" style="font-size: 33rpx;" bindinput="getDetailAddress" value="{{detailAddress}}"></input>
+			
+			
+		</view>
+
+	
+
+
+
+</form>
+<view class="padding flex flex-direction" style="margin-top: 200rpx;">
+
+<button class="cu-btn bg-green margin-tb-sm lg" bind:tap="submit">提交</button>
+</view>
+
+<van-popup
+      show="{{showEnterTime}}"
+      position="bottom"
+      label="进入时间"
+      custom-style="height: 50%;"
+      bind:close="onCancel"
+	  bind:confirm="onConfirm"
+    >
+		<van-datetime-picker type="datetime" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:confirm="onConfirm" formatter="{{ formatter }}" bind:cancel="onCancel"/>
+</van-popup>
+<van-popup show="{{showLeavingTime}}"
+      position="bottom"
+      label="离开时间"
+      custom-style="height: 50%;"
+      bind:close="onCancelLeaving">
+			<van-datetime-picker type="datetime" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:confirm="onConfirmLeaving" formatter="{{ formatter }}" bind:cancel="onCancelLeaving" 
+			/>
+</van-popup>

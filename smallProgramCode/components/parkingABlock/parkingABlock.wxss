@@ -1,0 +1,13 @@
+
+@import '/colorui/icon.wxss';
+@import '/colorui/main.wxss';
+.classBlock{
+	height: 288rpx;
+}
+.classTong{
+	height: 301rpx;
+}
+.shixiao{
+  color:gray;
+  height: 308rpx;
+}

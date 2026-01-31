@@ -1,0 +1,28 @@
+<wxs src="../../utils/time.wxs" module="ts"></wxs>
+<view style="width: 700rpx;height: 271rpx;background:linear-gradient(135deg,rgb(152, 205, 240),rgb(190, 223, 245) 50%);border-radius: 20rpx;display: flex;align-items: flex-start;flex-direction: column;justify-content: center;box-shadow: 4rpx 5rpx 10rpx rgb(229, 231, 231);">
+
+    
+	<view style="font-size: 31rpx;font-weight: 700;margin-top:-5rpx;margin-left:20rpx;"><text style="font-weight: 700;color: black;">姓名：</text><text style="color: red;text-decoration:underline">{{leavingRecordItem.userName}}</text></view>
+   
+
+<view style="display: flex;justify-content: center;width: 100%;flex-direction: column;align-items: flex-start;margin-left:20rpx ;margin-top: 20rpx;">  
+  <view><text>
+	<text style="font-weight: 700;">请假时间段：</text>{{leavingRecordItem.leavingDate}} </text>
+  </view>
+  <view style="margin-top: 0rpx;"><text style="font-weight: 700;">事由类型：</text> {{leavingRecordItem.pretext}}
+  </view>
+  <view style="margin-top:30rpx;width: 92%;justify-content: flex-start;">
+	<view style="overflow:hidden;text-overflow: ellipsis;white-space: nowrap;white-space:normal;"><text style="font-weight: 700;">外出地点：</text>{{leavingRecordItem.leavingAddress}}</view>
+    <view style="overflow:hidden;text-overflow: ellipsis;white-space: nowrap;white-space:normal"><text style="font-weight: 700;">状态：</text>
+	<text wx:if="{{leavingRecordItem.leavingStatus==='待审核'}}" style="color:yellow">{{leavingRecordItem.leavingStatus}}</text>
+	<text wx:if="{{leavingRecordItem.leavingStatus==='通过'}}" style="color:green">{{leavingRecordItem.leavingStatus}}</text>
+	<text wx:if="{{leavingRecordItem.leavingStatus==='打回'}}" style="color:red">{{leavingRecordItem.leavingStatus}}</text></view>
+  </view>
+  
+
+
+
+ 
+</view>
+
+</view>

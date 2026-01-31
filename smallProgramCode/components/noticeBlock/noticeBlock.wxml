@@ -1,0 +1,25 @@
+<wxs src="../../utils/time.wxs" module="ts"></wxs>
+<view style="width: 700rpx;height: 291rpx;background-color: white;border-radius: 20rpx;">
+<view style="display: flex;justify-content: flex-start;width: 95%;">
+	<view style="padding: 30rpx;font-size: 31rpx;font-weight: 700;">{{noticeItem.announcementType}}</view>
+	
+    
+</view>
+<view style="display: flex;justify-content: center;width: 100%;">
+	
+  <view style="display: flex;justify-content: center;width: 100%;">
+	<image src="{{noticeItem.picture}}" style="width: 150rpx;height: 100rpx;margin-left:0rpx"></image>
+	<view style="width: 480rpx;height: 150rpx;margin-top: -30rpx;margin-left: 20rpx;">
+		<text style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 4;overflow: hidden;word-break: break-all;text-overflow: ellipsis;">
+		{{noticeItem.content}}1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</text>
+	</view>
+    
+ </view>
+</view>
+<view style="display: flex;width: 680rpx;justify-content: space-between;">
+<view style="justify-content: flex-end;display: flex;font-size: 30rpx;font-weight: 700;margin-top: 0rpx;;">
+<view style="margin-left: 40rpx;"><image src="{{noticeItem.avatar}}" mode="aspectFill" style="width: 50rpx;height: 50rpx;border-radius: 25rpx;"></image></view>
+<view style="margin-top: 10rpx;margin-left: 30rpx;">{{noticeItem.userName}}111</view></view>
+<view style="display: flex;font-size: 30rpx;margin-top: 20rpx;">{{ts.timeFormatSeconds(noticeItem.releaseTime)}}</view>
+</view>
+</view>

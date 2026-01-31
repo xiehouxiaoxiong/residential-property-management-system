@@ -1,0 +1,21 @@
+<wxs src="../../utils/time.wxs" module="ts"></wxs>
+<view style="width: 700rpx;height: 251rpx;background-color: white;border-radius: 20rpx;box-shadow: 4rpx 4rpx 4rpx rgb(219, 217, 217);">
+<view style="display: flex;justify-content: space-between;width: 95%;">
+	<view style="padding: 30rpx;font-size: 31rpx;font-weight: 700;">{{complaintItem.complaintType}}</view>
+	<view style="display: flex;">
+		<view class="{{complaintItem.complaintStatus==='已受理'?'statusTextFin':'statusText'}}">{{complaintItem.complaintStatus}}</view>
+	    <view style="margin-top: 25rpx;"><image src="/images/delete.png" style="width: 40rpx;height: 40rpx;margin-left: 20rpx;" bind:tap="deleteId" data-id="{{complaintItem.id}}"></image></view>
+	</view>
+    
+</view>
+<view style="display: flex;justify-content: center;width: 100%;">
+	
+  <view style="display: flex;justify-content: center;width: 100%;"><textarea style="width: 91%;height: 100rpx;">
+	投诉内容：{{complaintItem.textareaContent}}
+  </textarea></view>
+  <view style="display: flex;justify-content: center;width: 100%;" wx:if="{{complaintItem.complaintStatus==='已受理'}}"><textarea style="width: 91%;height: 100rpx;color: green;">
+	投诉结果：{{complaintItem.complaintResult}}
+  </textarea></view>
+</view>
+<view style="justify-content: flex-end;width: 95%;display: flex;font-size: 30rpx;font-weight: 700;margin-top: 0rpx;">投诉时间：{{ts.timeFormatSeconds(complaintItem.complaintTime)}}</view>
+</view>
